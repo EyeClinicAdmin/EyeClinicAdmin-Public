@@ -240,9 +240,10 @@
                     }
                 },
                 "required": [
-                    "Id",
                     "Name",
-                    "Tel"
+                    "City",
+                    "PostCode",
+                    "Line1"
                 ],
                 "additionalProperties": false
             }

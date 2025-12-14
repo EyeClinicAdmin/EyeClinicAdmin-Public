@@ -1,0 +1,257 @@
+{
+    "$id": "https://https://raw.githubusercontent.com/EyeClinicAdmin/EyeClinicAdmin-Public/main/schemas/eca/v1/eyeclinic-dataset.schema.json",
+    "title": "EyeClinicDataset",
+    "type": "object",
+    "properties": {
+        "metadata": {
+            "type": "object",
+            "properties": {
+                "generatedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "source": {
+                    "type": "string"
+                },
+                "schemaVersion": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "generatedAt",
+                "source",
+                "schemaVersion"
+            ],
+            "additionalProperties": false
+        },
+        "patients": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer"
+                    },
+                    "Surname": {
+                        "type": "string"
+                    },
+                    "Forenames": {
+                        "type": "string"
+                    },
+                    "Title": {
+                        "type": "string"
+                    },
+                    "Line1": {
+                        "type": "string"
+                    },
+                    "Line2": {
+                        "type": "string"
+                    },
+                    "City": {
+                        "type": "string"
+                    },
+                    "PostCode": {
+                        "type": "string"
+                    },
+                    "County": {
+                        "type": "string"
+                    },
+                    "Sex": {
+                        "type": "string",
+                        "enum": [
+                            "M",
+                            "F",
+                            "Other",
+                            "Unknown"
+                        ]
+                    },
+                    "YearOfBirth": {
+                        "type": "integer"
+                    },
+                    "MonthOfBirth": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 12
+                    },
+                    "DayOfBirth": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 31
+                    },
+                    "DoNotSendSms": {
+                        "type": "boolean"
+                    },
+                    "TelExtension": {
+                        "type": "string"
+                    },
+                    "Tel": {
+                        "type": "string"
+                    },
+                    "Contact1Tel": {
+                        "type": "string"
+                    },
+                    "Contact1Name": {
+                        "type": "string"
+                    },
+                    "Contact2Tel": {
+                        "type": "string"
+                    },
+                    "Contact2Name": {
+                        "type": "string"
+                    },
+                    "NhsNumber": {
+                        "type": "string"
+                    },
+                    "EmailAddress": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "SchoolAddress": {
+                        "type": "string"
+                    },
+                    "IsDeleted": {
+                        "type": "boolean"
+                    },
+                    "DeletionReason": {
+                        "type": "string"
+                    },
+                    "RegisteredSightImpaired": {
+                        "type": "boolean"
+                    },
+                    "Diabetic": {
+                        "type": "boolean"
+                    },
+                    "Glaucoma": {
+                        "type": "boolean"
+                    },
+                    "FamilyHistoryOfGlaucoma": {
+                        "type": "boolean"
+                    },
+                    "RiskOfGlaucoma": {
+                        "type": "boolean"
+                    },
+                    "RiskBasedOnEthnicity": {
+                        "type": "boolean"
+                    },
+                    "UniOcular": {
+                        "type": "boolean"
+                    },
+                    "HearingImpaired": {
+                        "type": "boolean"
+                    },
+                    "RetentisPigmentosa": {
+                        "type": "boolean"
+                    },
+                    "GpId": {
+                        "type": "integer"
+                    },
+                    "PreferredClinicianId": {
+                        "type": "integer"
+                    },
+                    "PreferredLocationId": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "Id",
+                    "Surname",
+                    "Forenames",
+                    "Title",
+                    "Line1",
+                    "City",
+                    "PostCode",
+                    "Sex",
+                    "YearOfBirth",
+                    "MonthOfBirth",
+                    "DayOfBirth",
+                    "GpId"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "patientDataChanges": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "YearOfChange": {
+                        "type": "integer"
+                    },
+                    "MonthOfChange": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 12
+                    },
+                    "DayOfChange": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 31
+                    },
+                    "Description": {
+                        "type": "string"
+                    },
+                    "PatientId": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "YearOfChange",
+                    "MonthOfChange",
+                    "DayOfChange",
+                    "Description",
+                    "PatientId"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "gps": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer"
+                    },
+                    "Name": {
+                        "type": "string"
+                    },
+                    "Tel": {
+                        "type": "string"
+                    },
+                    "TelExtension": {
+                        "type": "string"
+                    },
+                    "Email": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "Line1": {
+                        "type": "string"
+                    },
+                    "Line2": {
+                        "type": "string"
+                    },
+                    "City": {
+                        "type": "string"
+                    },
+                    "PostCode": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Id",
+                    "Name",
+                    "Tel"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "metadata",
+        "patients",
+        "patientDataChanges",
+        "gps"
+    ],
+    "additionalProperties": false
+}

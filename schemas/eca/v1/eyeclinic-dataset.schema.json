@@ -1,5 +1,5 @@
 {
-    "$id": "https://https://raw.githubusercontent.com/EyeClinicAdmin/EyeClinicAdmin-Public/main/schemas/eca/v1/eyeclinic-dataset.schema.json",
+    "$id": "https://raw.githubusercontent.com/EyeClinicAdmin/EyeClinicAdmin-Public/main/schemas/eca/v1/eyeclinic-dataset.schema.json",
     "title": "EyeClinicDataset",
     "type": "object",
     "properties": {

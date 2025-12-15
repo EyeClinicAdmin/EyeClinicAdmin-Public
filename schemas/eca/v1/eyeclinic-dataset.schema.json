@@ -244,10 +244,10 @@
         }
     },
     "required": [
-        "metadata",
-        "patients",
-        "patientDataChanges",
-        "gps"
+        "schemaMetadata",
+        "schemaPatients",
+        "schemaPatientDataChanges",
+        "schemaGps"
     ],
     "additionalProperties": false
 }

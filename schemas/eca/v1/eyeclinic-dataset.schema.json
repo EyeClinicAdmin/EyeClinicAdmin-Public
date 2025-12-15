@@ -24,7 +24,7 @@
             ],
             "additionalProperties": false
         },
-        "patients": {
+        "schemapatients": {
             "type": "array",
             "items": {
                 "type": "object",
@@ -164,7 +164,7 @@
                 "additionalProperties": false
             }
         },
-        "patientDataChanges": {
+        "schemapatientDataChanges": {
             "type": "array",
             "items": {
                 "type": "object",
@@ -199,7 +199,7 @@
                 "additionalProperties": false
             }
         },
-        "gps": {
+        "schemagps": {
             "type": "array",
             "items": {
                 "type": "object",

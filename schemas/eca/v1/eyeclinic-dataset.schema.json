@@ -57,13 +57,7 @@
                         "type": "string"
                     },
                     "Sex": {
-                        "type": "string",
-                        "enum": [
-                            "M",
-                            "F",
-                            "Other",
-                            "Unknown"
-                        ]
+                        "type": "string"
                     },
                     "YearOfBirth": {
                         "type": "integer"

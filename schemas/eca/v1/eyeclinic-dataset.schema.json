@@ -3,7 +3,7 @@
     "title": "EyeClinicDataset",
     "type": "object",
     "properties": {
-        "metadata": {
+        "schemaMetadata": {
             "type": "object",
             "properties": {
                 "generatedAt": {

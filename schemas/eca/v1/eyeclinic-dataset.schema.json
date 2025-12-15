@@ -137,13 +137,13 @@
                         "type": "boolean"
                     },
                     "GpId": {
-                        "type": "integer"
+                        "type": ["integer", "null"]
                     },
                     "PreferredClinicianId": {
-                        "type": "integer"
+                        "type": ["integer", "null"]
                     },
                     "PreferredLocationId": {
-                        "type": "integer"
+                        "type": ["integer", "null"]
                     }
                 },
                 "required": [

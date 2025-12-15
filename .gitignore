@@ -1,0 +1,3 @@
+CSharpSchema/bin/*
+CSharpSchema/obj/*
+CSharpSchema/GeneratedClasses.cs

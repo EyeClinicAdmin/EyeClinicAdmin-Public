@@ -137,13 +137,22 @@
                         "type": "boolean"
                     },
                     "GpId": {
-                        "type": ["integer", "null"]
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
                     },
                     "PreferredClinicianId": {
-                        "type": ["integer", "null"]
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
                     },
                     "PreferredLocationId": {
-                        "type": ["integer", "null"]
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
                     }
                 },
                 "required": [
@@ -230,6 +239,36 @@
                         "type": "string"
                     },
                     "PostCode": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Name",
+                    "City",
+                    "PostCode",
+                    "Line1"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "schemaUsers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Id": {
+                        "type": "integer"
+                    },
+                    "Surname": {
+                        "type": "string"
+                    },
+                    "Forenames": {
+                        "type": "string"
+                    },
+                    "Title": {
+                        "type": "string"
+                    },
+                    "PIN": {
                         "type": "string"
                     }
                 },

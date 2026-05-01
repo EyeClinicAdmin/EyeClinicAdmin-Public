@@ -280,13 +280,219 @@
                 ],
                 "additionalProperties": false
             }
+        },
+        "schemaLocations": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string"
+                    },
+                    "City": {
+                        "type": "string"
+                    },
+                    "PostCode": {
+                        "type": "string"
+                    },
+                    "Line1": {
+                        "type": "string"
+                    }
+                },
+                "required": [],
+                "additionalProperties": false
+            }
+        },
+        "schemaRefractions": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "BinVA": {
+                        "type": "string"
+                    },
+                    "BinNrVa": {
+                        "type": "string"
+                    },
+                    "Bvd": {
+                        "type": "number"
+                    },
+                    "Comments": {
+                        "type": "string"
+                    },
+                    "IsImported": {
+                        "type": "boolean"
+                    },
+                    "AdministrationYear": {
+                        "type": "integer"
+                    },
+                    "AdministrationMonth": {
+                        "type": "integer"
+                    },
+                    "AdministrationDay": {
+                        "type": "integer"
+                    },
+                    "IncomeSupport": {
+                        "type": "boolean"
+                    },
+                    "Esa": {
+                        "type": "boolean"
+                    },
+                    "Jsa": {
+                        "type": "boolean"
+                    },
+                    "PensionCredit": {
+                        "type": "boolean"
+                    },
+                    "UniversalCredit": {
+                        "type": "boolean"
+                    },
+                    "H2CorH3C": {
+                        "type": "boolean"
+                    },
+                    "H2CorH3CCertificateNumber": {
+                        "type": "string"
+                    },
+                    "TaxCredit": {
+                        "type": "boolean"
+                    },
+                    "PrisonerOnLeave": {
+                        "type": "boolean"
+                    },
+                    "ComplexSpecRx": {
+                        "type": "boolean"
+                    },
+                    "AgeCategory": {
+                        "type": "integer"
+                    },
+                    "PatientId": {
+                        "type": "integer"
+                    },
+                    "RightEyeRefraction": {
+                        "type": "object",
+                        "properties": {
+                            "Vision": {
+                                "type": "string"
+                            },
+                            "SphericalCorrection": {
+                                "type": "number"
+                            },
+                            "CylindricalCorrection": {
+                                "type": "number"
+                            },
+                            "CylindricalAxis": {
+                                "type": "integer",
+                                "minimum": 0
+                            },
+                            "DistPrismUpDown": {
+                                "type": "number"
+                            },
+                            "DistPrismInOut": {
+                                "type": "number"
+                            },
+                            "CorrectedVisualAcuity": {
+                                "type": "string"
+                            },
+                            "ReadingAddition": {
+                                "type": "number"
+                            },
+                            "NearPrismUpDown": {
+                                "type": "number"
+                            },
+                            "NearPrismInOut": {
+                                "type": "number"
+                            },
+                            "CorrectedNearVisualAcuity": {
+                                "type": "string"
+                            },
+                            "IntermediateReadingAddition": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "Vision",
+                            "SphericalCorrection",
+                            "CylindricalCorrection",
+                            "CylindricalAxis",
+                            "DistPrismUpDown",
+                            "DistPrismInOut",
+                            "CorrectedVisualAcuity",
+                            "ReadingAddition",
+                            "NearPrismUpDown",
+                            "NearPrismInOut",
+                            "CorrectedNearVisualAcuity",
+                            "IntermediateReadingAddition"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "LeftEyeRefraction": {
+                        "type": "object",
+                        "properties": {
+                            "Vision": {
+                                "type": "string"
+                            },
+                            "SphericalCorrection": {
+                                "type": "number"
+                            },
+                            "CylindricalCorrection": {
+                                "type": "number"
+                            },
+                            "CylindricalAxis": {
+                                "type": "integer",
+                                "minimum": 0
+                            },
+                            "DistPrismUpDown": {
+                                "type": "number"
+                            },
+                            "DistPrismInOut": {
+                                "type": "number"
+                            },
+                            "CorrectedVisualAcuity": {
+                                "type": "string"
+                            },
+                            "ReadingAddition": {
+                                "type": "number"
+                            },
+                            "NearPrismUpDown": {
+                                "type": "number"
+                            },
+                            "NearPrismInOut": {
+                                "type": "number"
+                            },
+                            "CorrectedNearVisualAcuity": {
+                                "type": "string"
+                            },
+                            "IntermediateReadingAddition": {
+                                "type": "number"
+                            }
+                        },
+                        "required": [
+                            "Vision",
+                            "SphericalCorrection",
+                            "CylindricalCorrection",
+                            "CylindricalAxis",
+                            "DistPrismUpDown",
+                            "DistPrismInOut",
+                            "CorrectedVisualAcuity",
+                            "ReadingAddition",
+                            "NearPrismUpDown",
+                            "NearPrismInOut",
+                            "CorrectedNearVisualAcuity",
+                            "IntermediateReadingAddition"
+                        ],
+                        "additionalProperties": false
+                    }
+                }
+            }
         }
     },
     "required": [
         "schemaMetadata",
         "schemaPatients",
         "schemaPatientDataChanges",
-        "schemaGps"
+        "schemaGps",
+        "schemaUsers",
+        "schemaLocations"
     ],
     "additionalProperties": false
 }

@@ -270,13 +270,22 @@
                     },
                     "PIN": {
                         "type": "string"
+                    },
+                    "AppointmentLengthInMinutes": {
+                        "type": "integer"
+                    },
+                    "IsAdmin": {
+                        "type": "boolean"
                     }
                 },
                 "required": [
                     "Name",
                     "City",
                     "PostCode",
-                    "Line1"
+                    "Line1",
+                    "Title",
+                    "AppointmentLengthInMinutes",
+                    "IsAdmin"
                 ],
                 "additionalProperties": false
             }
@@ -299,7 +308,12 @@
                         "type": "string"
                     }
                 },
-                "required": [],
+                "required": [
+                    "Name",
+                    "City",
+                    "PostCode",
+                    "Line1"
+                ],
                 "additionalProperties": false
             }
         },

@@ -251,72 +251,6 @@
                 "additionalProperties": false
             }
         },
-        "schemaUsers": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "Id": {
-                        "type": "integer"
-                    },
-                    "Surname": {
-                        "type": "string"
-                    },
-                    "Forenames": {
-                        "type": "string"
-                    },
-                    "Title": {
-                        "type": "string"
-                    },
-                    "PIN": {
-                        "type": "string"
-                    },
-                    "AppointmentLengthInMinutes": {
-                        "type": "integer"
-                    },
-                    "IsAdmin": {
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "Name",
-                    "City",
-                    "PostCode",
-                    "Line1",
-                    "Title",
-                    "AppointmentLengthInMinutes",
-                    "IsAdmin"
-                ],
-                "additionalProperties": false
-            }
-        },
-        "schemaLocations": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "Name": {
-                        "type": "string"
-                    },
-                    "City": {
-                        "type": "string"
-                    },
-                    "PostCode": {
-                        "type": "string"
-                    },
-                    "Line1": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "Name",
-                    "City",
-                    "PostCode",
-                    "Line1"
-                ],
-                "additionalProperties": false
-            }
-        },
         "schemaRefractions": {
             "type": "array",
             "items": {
@@ -505,8 +439,7 @@
         "schemaPatients",
         "schemaPatientDataChanges",
         "schemaGps",
-        "schemaUsers",
-        "schemaLocations"
+        "schemaRefractions"
     ],
     "additionalProperties": false
 }

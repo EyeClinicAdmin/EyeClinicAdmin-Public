@@ -2,6 +2,364 @@
     "$id": "https://raw.githubusercontent.com/EyeClinicAdmin/EyeClinicAdmin-Public/main/schemas/eca/v1/eyeclinic-dataset.schema.json",
     "title": "EyeClinicDataset",
     "type": "object",
+    "definitions": {
+        "SchemaPatient": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer"
+                },
+                "Surname": {
+                    "type": "string"
+                },
+                "Forenames": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Line1": {
+                    "type": "string"
+                },
+                "Line2": {
+                    "type": "string"
+                },
+                "City": {
+                    "type": "string"
+                },
+                "PostCode": {
+                    "type": "string"
+                },
+                "County": {
+                    "type": "string"
+                },
+                "Sex": {
+                    "type": "string"
+                },
+                "YearOfBirth": {
+                    "type": "integer"
+                },
+                "MonthOfBirth": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 12
+                },
+                "DayOfBirth": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 31
+                },
+                "DoNotSendSms": {
+                    "type": "boolean"
+                },
+                "TelExtension": {
+                    "type": "string"
+                },
+                "Tel": {
+                    "type": "string"
+                },
+                "Contact1Tel": {
+                    "type": "string"
+                },
+                "Contact1Name": {
+                    "type": "string"
+                },
+                "Contact2Tel": {
+                    "type": "string"
+                },
+                "Contact2Name": {
+                    "type": "string"
+                },
+                "NhsNumber": {
+                    "type": "string"
+                },
+                "EmailAddress": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "SchoolAddress": {
+                    "type": "string"
+                },
+                "IsDeleted": {
+                    "type": "boolean"
+                },
+                "DeletionReason": {
+                    "type": "string"
+                },
+                "RegisteredSightImpaired": {
+                    "type": "boolean"
+                },
+                "Diabetic": {
+                    "type": "boolean"
+                },
+                "Glaucoma": {
+                    "type": "boolean"
+                },
+                "FamilyHistoryOfGlaucoma": {
+                    "type": "boolean"
+                },
+                "RiskOfGlaucoma": {
+                    "type": "boolean"
+                },
+                "RiskBasedOnEthnicity": {
+                    "type": "boolean"
+                },
+                "UniOcular": {
+                    "type": "boolean"
+                },
+                "HearingImpaired": {
+                    "type": "boolean"
+                },
+                "RetentisPigmentosa": {
+                    "type": "boolean"
+                },
+                "GpId": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "PreferredClinicianId": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "PreferredLocationId": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "Surname",
+                "Forenames",
+                "Title",
+                "Line1",
+                "City",
+                "PostCode",
+                "Sex",
+                "YearOfBirth",
+                "MonthOfBirth",
+                "DayOfBirth",
+                "EmailAddress",
+                "Tel",
+                "TelExtension"
+            ],
+            "additionalProperties": false
+        },
+        "SchemaPatientDataChange": {
+            "type": "object",
+            "properties": {
+                "YearOfChange": {
+                    "type": "integer"
+                },
+                "MonthOfChange": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 12
+                },
+                "DayOfChange": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 31
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "PatientId": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "YearOfChange",
+                "MonthOfChange",
+                "DayOfChange",
+                "Description",
+                "PatientId"
+            ],
+            "additionalProperties": false
+        },
+        "SchemaGp": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Tel": {
+                    "type": "string"
+                },
+                "TelExtension": {
+                    "type": "string"
+                },
+                "Email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "Line1": {
+                    "type": "string"
+                },
+                "Line2": {
+                    "type": "string"
+                },
+                "City": {
+                    "type": "string"
+                },
+                "PostCode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "City",
+                "PostCode",
+                "Line1"
+            ],
+            "additionalProperties": false
+        },
+        "EyeRefraction": {
+            "type": "object",
+            "properties": {
+                "Vision": {
+                    "type": "string"
+                },
+                "SphericalCorrection": {
+                    "type": "number"
+                },
+                "CylindricalCorrection": {
+                    "type": "number"
+                },
+                "CylindricalAxis": {
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "DistPrismUpDown": {
+                    "type": "number"
+                },
+                "DistPrismInOut": {
+                    "type": "number"
+                },
+                "CorrectedVisualAcuity": {
+                    "type": "string"
+                },
+                "ReadingAddition": {
+                    "type": "number"
+                },
+                "NearPrismUpDown": {
+                    "type": "number"
+                },
+                "NearPrismInOut": {
+                    "type": "number"
+                },
+                "CorrectedNearVisualAcuity": {
+                    "type": "string"
+                },
+                "IntermediateReadingAddition": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Vision",
+                "SphericalCorrection",
+                "CylindricalCorrection",
+                "CylindricalAxis",
+                "DistPrismUpDown",
+                "DistPrismInOut",
+                "CorrectedVisualAcuity",
+                "ReadingAddition",
+                "NearPrismUpDown",
+                "NearPrismInOut",
+                "CorrectedNearVisualAcuity",
+                "IntermediateReadingAddition"
+            ],
+            "additionalProperties": false
+        },
+        "SchemaRefraction": {
+            "type": "object",
+            "properties": {
+                "BinVA": {
+                    "type": "string"
+                },
+                "BinNrVa": {
+                    "type": "string"
+                },
+                "Bvd": {
+                    "type": "number"
+                },
+                "Comments": {
+                    "type": "string"
+                },
+                "IsImported": {
+                    "type": "boolean"
+                },
+                "AdministrationYear": {
+                    "type": "integer"
+                },
+                "AdministrationMonth": {
+                    "type": "integer"
+                },
+                "AdministrationDay": {
+                    "type": "integer"
+                },
+                "IncomeSupport": {
+                    "type": "boolean"
+                },
+                "Esa": {
+                    "type": "boolean"
+                },
+                "Jsa": {
+                    "type": "boolean"
+                },
+                "PensionCredit": {
+                    "type": "boolean"
+                },
+                "UniversalCredit": {
+                    "type": "boolean"
+                },
+                "H2CorH3C": {
+                    "type": "boolean"
+                },
+                "H2CorH3CCertificateNumber": {
+                    "type": "string"
+                },
+                "TaxCredit": {
+                    "type": "boolean"
+                },
+                "PrisonerOnLeave": {
+                    "type": "boolean"
+                },
+                "ComplexSpecRx": {
+                    "type": "boolean"
+                },
+                "AgeCategory": {
+                    "type": "integer"
+                },
+                "PatientId": {
+                    "type": "integer"
+                },
+                "RightEyeRefraction": {
+                    "type": "object",
+                    "properties": {
+                        "EyeRefraction": {
+                            "$ref": "#/definitions/EyeRefraction"
+                        }
+                    }
+                },
+                "LeftEyeRefraction": {
+                    "type": "object",
+                    "properties": {
+                        "EyeRefraction": {
+                            "$ref": "#/definitions/EyeRefraction"
+                        }
+                    }
+                }
+            }
+        }
+    },
     "properties": {
         "schemaMetadata": {
             "type": "object",
@@ -27,410 +385,25 @@
         "schemaPatients": {
             "type": "array",
             "items": {
-                "type": "object",
-                "properties": {
-                    "Id": {
-                        "type": "integer"
-                    },
-                    "Surname": {
-                        "type": "string"
-                    },
-                    "Forenames": {
-                        "type": "string"
-                    },
-                    "Title": {
-                        "type": "string"
-                    },
-                    "Line1": {
-                        "type": "string"
-                    },
-                    "Line2": {
-                        "type": "string"
-                    },
-                    "City": {
-                        "type": "string"
-                    },
-                    "PostCode": {
-                        "type": "string"
-                    },
-                    "County": {
-                        "type": "string"
-                    },
-                    "Sex": {
-                        "type": "string"
-                    },
-                    "YearOfBirth": {
-                        "type": "integer"
-                    },
-                    "MonthOfBirth": {
-                        "type": "integer",
-                        "minimum": 1,
-                        "maximum": 12
-                    },
-                    "DayOfBirth": {
-                        "type": "integer",
-                        "minimum": 1,
-                        "maximum": 31
-                    },
-                    "DoNotSendSms": {
-                        "type": "boolean"
-                    },
-                    "TelExtension": {
-                        "type": "string"
-                    },
-                    "Tel": {
-                        "type": "string"
-                    },
-                    "Contact1Tel": {
-                        "type": "string"
-                    },
-                    "Contact1Name": {
-                        "type": "string"
-                    },
-                    "Contact2Tel": {
-                        "type": "string"
-                    },
-                    "Contact2Name": {
-                        "type": "string"
-                    },
-                    "NhsNumber": {
-                        "type": "string"
-                    },
-                    "EmailAddress": {
-                        "type": "string",
-                        "format": "email"
-                    },
-                    "SchoolAddress": {
-                        "type": "string"
-                    },
-                    "IsDeleted": {
-                        "type": "boolean"
-                    },
-                    "DeletionReason": {
-                        "type": "string"
-                    },
-                    "RegisteredSightImpaired": {
-                        "type": "boolean"
-                    },
-                    "Diabetic": {
-                        "type": "boolean"
-                    },
-                    "Glaucoma": {
-                        "type": "boolean"
-                    },
-                    "FamilyHistoryOfGlaucoma": {
-                        "type": "boolean"
-                    },
-                    "RiskOfGlaucoma": {
-                        "type": "boolean"
-                    },
-                    "RiskBasedOnEthnicity": {
-                        "type": "boolean"
-                    },
-                    "UniOcular": {
-                        "type": "boolean"
-                    },
-                    "HearingImpaired": {
-                        "type": "boolean"
-                    },
-                    "RetentisPigmentosa": {
-                        "type": "boolean"
-                    },
-                    "GpId": {
-                        "type": [
-                            "integer",
-                            "null"
-                        ]
-                    },
-                    "PreferredClinicianId": {
-                        "type": [
-                            "integer",
-                            "null"
-                        ]
-                    },
-                    "PreferredLocationId": {
-                        "type": [
-                            "integer",
-                            "null"
-                        ]
-                    }
-                },
-                "required": [
-                    "Surname",
-                    "Forenames",
-                    "Title",
-                    "Line1",
-                    "City",
-                    "PostCode",
-                    "Sex",
-                    "YearOfBirth",
-                    "MonthOfBirth",
-                    "DayOfBirth",
-                    "EmailAddress",
-                    "Tel",
-                    "TelExtension"
-                ],
-                "additionalProperties": false
+                "$ref": "#/definitions/SchemaPatient"
             }
         },
         "schemaPatientDataChanges": {
             "type": "array",
             "items": {
-                "type": "object",
-                "properties": {
-                    "YearOfChange": {
-                        "type": "integer"
-                    },
-                    "MonthOfChange": {
-                        "type": "integer",
-                        "minimum": 1,
-                        "maximum": 12
-                    },
-                    "DayOfChange": {
-                        "type": "integer",
-                        "minimum": 1,
-                        "maximum": 31
-                    },
-                    "Description": {
-                        "type": "string"
-                    },
-                    "PatientId": {
-                        "type": "integer"
-                    }
-                },
-                "required": [
-                    "YearOfChange",
-                    "MonthOfChange",
-                    "DayOfChange",
-                    "Description",
-                    "PatientId"
-                ],
-                "additionalProperties": false
+                "$ref": "#/definitions/SchemaPatientDataChange"
             }
         },
         "schemaGps": {
             "type": "array",
             "items": {
-                "type": "object",
-                "properties": {
-                    "Id": {
-                        "type": "integer"
-                    },
-                    "Name": {
-                        "type": "string"
-                    },
-                    "Tel": {
-                        "type": "string"
-                    },
-                    "TelExtension": {
-                        "type": "string"
-                    },
-                    "Email": {
-                        "type": "string",
-                        "format": "email"
-                    },
-                    "Line1": {
-                        "type": "string"
-                    },
-                    "Line2": {
-                        "type": "string"
-                    },
-                    "City": {
-                        "type": "string"
-                    },
-                    "PostCode": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "Name",
-                    "City",
-                    "PostCode",
-                    "Line1"
-                ],
-                "additionalProperties": false
+                "$ref": "#/definitions/SchemaGp"
             }
         },
         "schemaRefractions": {
             "type": "array",
             "items": {
-                "type": "object",
-                "properties": {
-                    "BinVA": {
-                        "type": "string"
-                    },
-                    "BinNrVa": {
-                        "type": "string"
-                    },
-                    "Bvd": {
-                        "type": "number"
-                    },
-                    "Comments": {
-                        "type": "string"
-                    },
-                    "IsImported": {
-                        "type": "boolean"
-                    },
-                    "AdministrationYear": {
-                        "type": "integer"
-                    },
-                    "AdministrationMonth": {
-                        "type": "integer"
-                    },
-                    "AdministrationDay": {
-                        "type": "integer"
-                    },
-                    "IncomeSupport": {
-                        "type": "boolean"
-                    },
-                    "Esa": {
-                        "type": "boolean"
-                    },
-                    "Jsa": {
-                        "type": "boolean"
-                    },
-                    "PensionCredit": {
-                        "type": "boolean"
-                    },
-                    "UniversalCredit": {
-                        "type": "boolean"
-                    },
-                    "H2CorH3C": {
-                        "type": "boolean"
-                    },
-                    "H2CorH3CCertificateNumber": {
-                        "type": "string"
-                    },
-                    "TaxCredit": {
-                        "type": "boolean"
-                    },
-                    "PrisonerOnLeave": {
-                        "type": "boolean"
-                    },
-                    "ComplexSpecRx": {
-                        "type": "boolean"
-                    },
-                    "AgeCategory": {
-                        "type": "integer"
-                    },
-                    "PatientId": {
-                        "type": "integer"
-                    },
-                    "RightEyeRefraction": {
-                        "type": "object",
-                        "properties": {
-                            "Vision": {
-                                "type": "string"
-                            },
-                            "SphericalCorrection": {
-                                "type": "number"
-                            },
-                            "CylindricalCorrection": {
-                                "type": "number"
-                            },
-                            "CylindricalAxis": {
-                                "type": "integer",
-                                "minimum": 0
-                            },
-                            "DistPrismUpDown": {
-                                "type": "number"
-                            },
-                            "DistPrismInOut": {
-                                "type": "number"
-                            },
-                            "CorrectedVisualAcuity": {
-                                "type": "string"
-                            },
-                            "ReadingAddition": {
-                                "type": "number"
-                            },
-                            "NearPrismUpDown": {
-                                "type": "number"
-                            },
-                            "NearPrismInOut": {
-                                "type": "number"
-                            },
-                            "CorrectedNearVisualAcuity": {
-                                "type": "string"
-                            },
-                            "IntermediateReadingAddition": {
-                                "type": "number"
-                            }
-                        },
-                        "required": [
-                            "Vision",
-                            "SphericalCorrection",
-                            "CylindricalCorrection",
-                            "CylindricalAxis",
-                            "DistPrismUpDown",
-                            "DistPrismInOut",
-                            "CorrectedVisualAcuity",
-                            "ReadingAddition",
-                            "NearPrismUpDown",
-                            "NearPrismInOut",
-                            "CorrectedNearVisualAcuity",
-                            "IntermediateReadingAddition"
-                        ],
-                        "additionalProperties": false
-                    },
-                    "LeftEyeRefraction": {
-                        "type": "object",
-                        "properties": {
-                            "Vision": {
-                                "type": "string"
-                            },
-                            "SphericalCorrection": {
-                                "type": "number"
-                            },
-                            "CylindricalCorrection": {
-                                "type": "number"
-                            },
-                            "CylindricalAxis": {
-                                "type": "integer",
-                                "minimum": 0
-                            },
-                            "DistPrismUpDown": {
-                                "type": "number"
-                            },
-                            "DistPrismInOut": {
-                                "type": "number"
-                            },
-                            "CorrectedVisualAcuity": {
-                                "type": "string"
-                            },
-                            "ReadingAddition": {
-                                "type": "number"
-                            },
-                            "NearPrismUpDown": {
-                                "type": "number"
-                            },
-                            "NearPrismInOut": {
-                                "type": "number"
-                            },
-                            "CorrectedNearVisualAcuity": {
-                                "type": "string"
-                            },
-                            "IntermediateReadingAddition": {
-                                "type": "number"
-                            }
-                        },
-                        "required": [
-                            "Vision",
-                            "SphericalCorrection",
-                            "CylindricalCorrection",
-                            "CylindricalAxis",
-                            "DistPrismUpDown",
-                            "DistPrismInOut",
-                            "CorrectedVisualAcuity",
-                            "ReadingAddition",
-                            "NearPrismUpDown",
-                            "NearPrismInOut",
-                            "CorrectedNearVisualAcuity",
-                            "IntermediateReadingAddition"
-                        ],
-                        "additionalProperties": false
-                    }
-                }
+                "$ref": "#/definitions/SchemaRefraction"
             }
         }
     },

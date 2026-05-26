@@ -152,6 +152,9 @@
         "SchemaPatientDataChange": {
             "type": "object",
             "properties": {
+                "Id": {
+                    "type": "integer"
+                },
                 "YearOfChange": {
                     "type": "integer"
                 },

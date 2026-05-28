@@ -227,6 +227,9 @@
         "EyeRefraction": {
             "type": "object",
             "properties": {
+                "Id": {
+                    "type": "integer"
+                },
                 "Vision": {
                     "type": "string"
                 },

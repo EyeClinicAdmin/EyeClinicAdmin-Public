@@ -284,6 +284,9 @@
         "SchemaRefraction": {
             "type": "object",
             "properties": {
+                "Id": {
+                    "type": "integer"
+                },
                 "BinVA": {
                     "type": "string"
                 },

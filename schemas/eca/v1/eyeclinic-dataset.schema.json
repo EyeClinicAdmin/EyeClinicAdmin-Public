@@ -3,6 +3,54 @@
     "title": "EyeClinicDataset",
     "type": "object",
     "definitions": {
+        "SchemaLocation": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer"
+                },
+                "Name": {
+                    "type": "string",
+                    "maxLength": 100
+                },
+                "City": {
+                    "type": "string",
+                    "maxLength": 50
+                },
+                "PostCode": {
+                    "type": "string",
+                    "maxLength": 25
+                },
+                "Tel": {
+                    "type": "string",
+                    "maxLength": 20
+                },
+                "TelExtension": {
+                    "type": "string",
+                    "maxLength": 15
+                },
+                "EmailAddress": {
+                    "type": "string",
+                    "format": "email",
+                    "maxLength": 100
+                },
+                "Line1": {
+                    "type": "string",
+                    "maxLength": 100
+                },
+                "Line2": {
+                    "type": "string",
+                    "maxLength": 100
+                }
+            },
+            "required": [
+                "Name",
+                "City",
+                "PostCode",
+                "Line1"
+            ],
+            "additionalProperties": false
+        },
         "SchemaUser": {
             "type": "object",
             "properties": {
@@ -471,6 +519,12 @@
             "items": {
                 "$ref": "#/definitions/SchemaUser"
             }
+        },
+        "schemaLocations": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/SchemaLocation"
+            }
         }
     },
     "required": [
@@ -479,7 +533,8 @@
         "schemaPatientDataChanges",
         "schemaGps",
         "schemaRefractions",
-        "schemaUsers"
+        "schemaUsers",
+        "schemaLocations"
     ],
     "additionalProperties": false
 }

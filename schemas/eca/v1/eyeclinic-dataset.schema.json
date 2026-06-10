@@ -3,6 +3,66 @@
     "title": "EyeClinicDataset",
     "type": "object",
     "definitions": {
+        "SchemaUser": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer"
+                },
+                "Title": {
+                    "type": "string",
+                    "maxLength": 5
+                },
+                "Forenames": {
+                    "type": "string",
+                    "maxLength": 100
+                },
+                "Surname": {
+                    "type": "string",
+                    "maxLength": 50
+                },
+                "Email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "JobTitle": {
+                    "type": "string",
+                    "maxLength": 50
+                },
+                "GocNumber": {
+                    "type": "string",
+                    "maxLength": 8
+                },
+                "HealthBoardNumber": {
+                    "type": "string",
+                    "maxLength": 18
+                },
+                "Qualification": {
+                    "type": "string"
+                },
+                "AppointmentLengthMinutes": {
+                    "type": "integer"
+                },
+                "Role": {
+                    "type": "integer"
+                },
+                "IndividualRights": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    }
+                },
+                "IsDeleted": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Title",
+                "Forenames",
+                "Surname"
+            ],
+            "additionalProperties": false
+        },
         "SchemaPatient": {
             "type": "object",
             "properties": {
@@ -311,6 +371,9 @@
                 "AdministrationDay": {
                     "type": "integer"
                 },
+                "AdministrationUserId": {
+                    "type": "integer"
+                },
                 "IncomeSupport": {
                     "type": "boolean"
                 },
@@ -402,6 +465,12 @@
             "items": {
                 "$ref": "#/definitions/SchemaRefraction"
             }
+        },
+        "schemaUsers": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/SchemaUser"
+            }
         }
     },
     "required": [
@@ -409,7 +478,8 @@
         "schemaPatients",
         "schemaPatientDataChanges",
         "schemaGps",
-        "schemaRefractions"
+        "schemaRefractions",
+        "schemaUsers"
     ],
     "additionalProperties": false
 }
